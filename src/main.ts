@@ -1,5 +1,5 @@
 import './shims';
 import {bootstrap} from '@angular/platform-browser-dynamic';
-import {App} from './app/app.component';
+import {AppComponent} from './app/app.component';
 
-bootstrap(App);
+bootstrap(AppComponent);

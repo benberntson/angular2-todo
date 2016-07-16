@@ -1,11 +1,15 @@
 import {Component} from '@angular/core';
+import {ListComponent} from './todo-list/list.component';
+
+
 
 @Component({
   selector: 'app',
-  template: '<h1>fug, mayne!</h1>',
-  styleUrls: ['stylesheets/app/app.style.css']
+  templateUrl: 'app.template.html',
+  styleUrls: ['app.style.css'],
+  directives: [ListComponent]
 })
 
-export class App{
+export class AppComponent{
 
 }

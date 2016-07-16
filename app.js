@@ -44,7 +44,6 @@ if(app.get('env') === 'development') {
 }
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

@@ -48,7 +48,7 @@
 	__webpack_require__(1);
 	var platform_browser_dynamic_1 = __webpack_require__(276);
 	var app_component_1 = __webpack_require__(603);
-	platform_browser_dynamic_1.bootstrap(app_component_1.App);
+	platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent);
 
 
 /***/ },
@@ -56795,21 +56795,107 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(280);
-	var App = (function () {
-	    function App() {
+	var list_component_1 = __webpack_require__(604);
+	var AppComponent = (function () {
+	    function AppComponent() {
 	    }
-	    App = __decorate([
+	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'app',
-	            template: '<h1>fug, mayne!</h1>',
-	            styleUrls: ['stylesheets/app/app.style.css']
+	            template: __webpack_require__(607),
+	            styles: [__webpack_require__(608)],
+	            directives: [list_component_1.ListComponent]
 	        }), 
 	        __metadata('design:paramtypes', [])
-	    ], App);
-	    return App;
+	    ], AppComponent);
+	    return AppComponent;
 	}());
-	exports.App = App;
+	exports.AppComponent = AppComponent;
 
+
+/***/ },
+/* 604 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var core_1 = __webpack_require__(280);
+	var todo_list_1 = __webpack_require__(605);
+	var ListComponent = (function () {
+	    function ListComponent() {
+	        this.list = todo_list_1.todoList;
+	    }
+	    ListComponent = __decorate([
+	        core_1.Component({
+	            selector: 'list',
+	            template: __webpack_require__(606)
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], ListComponent);
+	    return ListComponent;
+	}());
+	exports.ListComponent = ListComponent;
+
+
+/***/ },
+/* 605 */
+/***/ function(module, exports) {
+
+	"use strict";
+	var mowTheLawn = {
+	    id: 0,
+	    task: 'Mow the lawn',
+	    description: 'Get on your lawnmower and mow the lawn',
+	    started: Date.now(),
+	    finished: Date.now() + 10000
+	};
+	var waterTheFlowers = {
+	    id: 10,
+	    task: 'Water the lawn',
+	    description: 'Turn on the sprinklers',
+	    started: Date.now() - 1000000,
+	    finished: Date.now()
+	};
+	var cookDinner = {
+	    id: 15,
+	    task: 'Cook dinner',
+	    description: 'Make mac and cheese, and hotdogs',
+	    started: Date.now() - 30000,
+	    finished: Date.now() + 1000
+	};
+	var todoList = [
+	    mowTheLawn,
+	    waterTheFlowers,
+	    cookDinner
+	];
+	exports.todoList = todoList;
+
+
+/***/ },
+/* 606 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul>\n  <p>Some things todo...</p>\n  <li *ngFor=\"let todo of list\">\n    {{todo | json}}\n  </li>\n</ul>\n";
+
+/***/ },
+/* 607 */
+/***/ function(module, exports) {
+
+	module.exports = "<h2>Todo List:</h2>\n<list></list>\n";
+
+/***/ },
+/* 608 */
+/***/ function(module, exports) {
+
+	module.exports = ""
 
 /***/ }
 /******/ ]);
