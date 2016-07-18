@@ -1,2 +1,14 @@
-<h2>Todo List:</h2>
-<list></list>
+<div class="row">
+  <div class="col-lg-offset-1 col-md-offset-2 col-lg-4 col-md-4 col-xs-6">
+    <add-todo (addedTodo)="listChange($event)"></add-todo>
+  </div>
+  <div class="col-lg-4 col-md-4 col-xs-6">
+    <div>
+      <a class="btn btn-primary"
+         [routerLink]="['list']">Todo List</a>
+      <a  href="#"
+          class="btn btn-warning">Deleted Todos</a>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

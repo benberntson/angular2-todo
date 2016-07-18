@@ -1,6 +1,15 @@
-<ul>
-  <p>Some things todo...</p>
-  <li *ngFor="let todo of list">
-    {{todo | json}}
-  </li>
-</ul>
+<h3>Todo List:</h3>
+<div *ngFor="let todo of list" class="row">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{todo.task}}
+    </div>
+    <div class="panel-body">
+      <p>{{todo.description}}</p>
+      <p>Date Started: {{todo.started | date}}</p>
+      <p>{{todo.finished | date}}</p>
+      <a class="btn btn-success" href="#complete">Complete</a>
+      <a class="btn btn-danger" (click)="deleteTodoById(todo._id)">Delete</a>
+    </div>
+  </div>
+</div>
